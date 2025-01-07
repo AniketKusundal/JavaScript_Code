@@ -1,0 +1,86 @@
+<!-- 1.	Create Calculator in JavaScript (only doing operation addition substation, division, multiplication). -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator In js </title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Container{
+            margin: 10px;
+            padding: 15px;
+            background-color: rgb(49, 49, 74);
+            height: 350px;
+            width: 350px;
+        }
+
+        .Calculator{
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .CalButtons{
+            margin: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+       
+      
+    </style>
+</head>
+<body>
+   <div class="Container">
+    <h1 style="color: white;">Assignment 1 Calculator </h1>
+    <div class="Calculator">
+        <form>
+            <div class="display">
+                <input type="text" name="display">
+            </div>
+            <div class="buttons1">
+                <input type="button" value="AC" class="CalButtons" onclick = "display.value = ''">
+                <input type="button" value="DE" class="CalButtons" onclick = "display.value = display.value.toString().slice(0 , -1)">
+                <input type="button" value="." class="CalButtons" onclick = "display.value += '.'">
+                <input type="button" value="/" class="CalButtons" onclick = "display.value += '/'">
+            </div>
+            <div class="buttons2">
+                <input type="button" value="7" class="CalButtons" onclick = "display.value += '7'">
+                <input type="button" value="8" class="CalButtons" onclick = "display.value += '8'">
+                <input type="button" value="9" class="CalButtons" onclick = "display.value += '9'">
+                <input type="button" value="*" class="CalButtons" onclick = "display.value += '-'">
+            </div>
+            <div class="buttons3">
+                <input type="button" value="4" class="CalButtons" onclick = "display.value += '4'">
+                <input type="button" value="5" class="CalButtons" onclick = "display.value += '5'">
+                <input type="button" value="6" class="CalButtons" onclick = "display.value += '6'">
+                <input type="button" value="-" class="CalButtons" onclick = "display.value += '-'">
+            </div>
+            <div class="buttons4">
+                <input type="button" value="1" class="CalButtons" onclick = "display.value += '1'">
+                <input type="button" value="2" class="CalButtons" onclick = "display.value += '2'">
+                <input type="button" value="3" class="CalButtons" onclick = "display.value += '3'">
+                <input type="button" value="+" class="CalButtons" onclick = "display.value += '+'">
+            </div>
+            <div class="buttons4">
+                <input type="button" value="00" class="CalButtons" onclick="display.value += '00'">
+                <input type="button" value="0" class="CalButtons" onclick="display.value += '0'">
+                <input type="button" value="=" class="CalButtons" onclick="display.value = eval(display.value)" class = "equal">
+            </div>
+        </form>
+    </div>
+   </div>
+</body>
+</html>

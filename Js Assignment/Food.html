@@ -1,0 +1,91 @@
+<!--  ₹ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Custom Pizza Order System</h2>
+        <form id="pizzaForm">
+            <label for="pizzaType">Select Pizza Type:</label>
+
+            <select id="pizzaType" required>
+                <option value="Classic">Classic</option>
+                <option value="VegPizza">VegPizza</option>
+                <option value="ChickenPizza">ChickenPizza</option>
+                <option value="SpecialPizza">SpecialPizza</option>
+            </select>
+
+            <label for="pizzaSize">Select Pizza Size:</label>
+            <select id="pizzaSize" required>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select>
+
+            <button type="button" onclick="placeOrder()">Place Order</button>
+        </form>
+
+        <div id="orderResult" class="result" style="display: none;"></div>
+    </div>       
+    <script>
+        const PizzaPrice = {
+            Classic : {small:100 , Medium:150 , large:180},
+            VegPizza : {small:120 , Medium:160 , large:190},
+            ChickenPizza : {small:150 , Medium:200 , large:260},
+            SpecialPizza : {small:200 , Medium:270 , large:300},
+        }
+
+        function placeOrder()
+        {
+            const pizzaType = document.getElementById('pizzaType').value
+            const pizzaSize = document.getElementById('pizzaSize').value
+
+
+            const price =  PizzaPrice[pizzaType][pizzaSize]
+
+            const result = document.getElementById('orderResult')
+
+            result.innerHTML = `<h3>Order Details </h3>
+                <p><strong>Pizza type</strong>${pizzaType}</p>
+                <p><strong>Pizza size</strong>${pizzaSize}</p>
+                <p><strong>Pizza type</strong>${price}</p>`
+                result.style.display = 'block'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character and Word Counter</title>
+    <style>
+        body {
+            background-color: rgb(138, 93, 138);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            resize: none;
+            font-size: 16px;
+        }
+        .counter {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p><strong>Assignment 5:</strong> Write a JavaScript program to create Character counter and Word counter web page.</p>
+    </div>
+    <h1>Character and Word Counter</h1>
+    <textarea id="TextCount" maxlength="500" placeholder="Enter text for character and word count..." cols="100" rows="10"></textarea>
+    <div class="counter">
+        <p id="charCount">Characters: 0</p>
+        <p id="wordCount">Words: 0</p>
+    </div>
+
+    <script>
+        const textArea = document.getElementById('TextCount');
+        const charCount = document.getElementById('charCount');
+        const wordCount = document.getElementById('wordCount');
+
+        textArea.addEventListener('input', () => {
+            const text = textArea.value;
+            // Update character count
+            charCount.textContent = `Characters: ${text.length}`;
+            // Update word count
+            const words = text.trim().split(/\s+/); // Split or seprate   by whitespace for word count
+            wordCount.textContent = `Words: ${text.trim() ? words.length : 0}`;
+        });
+    </script>
+</body>
+</html>
