@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Website Builder</title>
+
+    <style>
+        .Card{
+            display: flex;
+            border: 1px solid black;
+            width: 1000px;
+            margin: 5px;
+            
+        }
+
+        .image img{
+            width: 200px;
+        }
+
+        .Text h1 , p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        .image{
+            position: relative;
+
+        }
+
+        .capsule{
+            position: absolute;
+            bottom: 11px;
+            font-size: 12px;
+            background-color: black;
+            opacity: 0.9;
+            color: white;
+            padding: 3px;
+            border-radius: 5px;
+            right: 1px;
+            z-index: 10px;
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="Card">
+            <div class="image">
+                <img src="https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCKktmHuXV_macV6MoUwhKxwzXJ7w" alt="">
+
+                <div class = "capsule">12:50</div>
+            </div>
+                <div class="Text">  
+                    <h1>Introduction to sigma web devlopment</h1>
+                    <p>CodeWithHarry . 727k views . 2 months ago</p>
+
+                </div>
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

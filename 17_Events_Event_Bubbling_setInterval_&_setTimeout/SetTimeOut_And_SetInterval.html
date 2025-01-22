@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout and SetInterval</title>
+    
+    <style>
+        .Child {
+            border: 2px solid black;
+            background-color: yellowgreen;
+            padding: 14px;
+            margin: 14px;
+        }
+
+        .ChildContainer {
+            border: 2px solid black;
+            background-color: tomato;
+            padding: 14px;
+            margin: 14px;
+        }
+
+        .container {
+            border: 2px solid black;
+            background-color: chocolate;
+            padding: 14px;
+            margin: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="ChildContainer">
+            <div class="Child">
+                I'm a Child
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            let val1 = Math.ceil(Math.random() * 255);
+            let val2 = Math.ceil(Math.random() * 255);
+            let val3 = Math.ceil(Math.random() * 255);
+
+            // Remove the space in 'rgb (' to fix the issue
+            return `rgb(${val1}, ${val2}, ${val3})`;
+        }
+        // [1] SetInterval
+       let a = setInterval(() => {
+            document.querySelector(".Child").style.background = getRandomColor();
+        }, 1000);
+        console.log(a);  // it returns 1 it means it runing 
+
+        // clearInterval(1)   ---> it stops the setInterval
+        // undefined 
+        
+        // clearInterval   --->The clearInterval() method stop a timer set with the setInterval() method.
+
+
+
+
+        // setTimeout
+
+        setTimeout(() => {
+            document.querySelector(".Child").style.background = getRandomColor();
+        }, 2000);
+
+
+        //         The setTimeout() method calls a function after a number of milliseconds.
+        //          1 second = 1000 milliseconds
+        // The setTimeout() is executed only once.
+        // If you need repeated executions, use setInterval() instead.
+        // Use the clearTimeout() method to prevent the function from starting.
+        // To clear a timeout, use the id returned from setTimeout():
+
+    </script>
+</body>
+</html>

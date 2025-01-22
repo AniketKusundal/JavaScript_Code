@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubling</title>
+
+
+    <style>
+        .Child{
+            border: 2px solid black;
+            background-color: yellowgreen;
+            padding: 14px;
+            margin: 14px;
+        }
+
+        .ChildContainer{
+            border: 2px solid black;
+            background-color:tomato;
+            padding: 14px;
+            margin: 14px;
+        }
+
+
+        .container{
+            border: 2px solid black;
+            background-color:chocolate;
+            padding: 14px;
+            margin: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="ChildContainer">
+            <div class="Child">
+                I'm a Child
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script>
+        document.querySelector(".Child").addEventListener("click" , (e)=>{
+            e.stopPropagation()  // after child click other two event not be run
+            alert("Child Was Clicked")
+        })
+
+
+        document.querySelector(".ChildContainer").addEventListener("click" , (e)=>{
+            // e.stopPropagation() // this concept stop the event bubling 
+            alert("ChildContainer Was Clicked")
+        })
+
+
+        document.querySelector(".container").addEventListener("click" , (e)=>{
+            alert("container Was Clicked")
+        })
+    </script>
+</body>
+</html>
