@@ -1,0 +1,83 @@
+<!-- Create a haacking Simulator which has green background and it shows these messages with random deley of 1 to 7 seconds -->
+
+<!-- Massages To be displayed -->
+<!-- 
+
+        Initalizing Hacking........
+        Reading Your All files.......
+        Password File Detected.........
+        Sending all Passwords and personal files to server.......
+        Cleaning Up 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>20 Exercise</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Jersey+15&family=Sixtyfour+Convergence&display=swap");
+      body {
+        background-color: green;
+        color: white;
+        font-family: "Edu VIC WA NT Beginner", serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 50px;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <script>
+        const addItem = async (item)=>{
+            await randomDelay()
+            let div = document.createElement("div")
+            div.innerHTML = item
+            document.body.append(div)
+        }
+
+
+        
+        
+        const randomDelay = () =>{
+            return new Promise((resolve ,reject)=>{
+                timeout =1 + 8* Math.random()
+                setTimeout(() => {
+                    resolve()
+                }, timeout * 1000);
+            })
+        }
+        
+        async function main()
+        {
+            
+            setInterval(() => {
+            let last = document.body.lastElementChild;
+                if(last.innerHTML.endsWith("....")){
+                    last.innerHTML = last.innerHTML.slice(0 , last.innerHTML.length - 4)
+                }
+                else
+                {
+                    last.innerHTML = last.innerHTML + "."
+                }
+            }, 300);
+            
+            let msg = [
+                " Initalizing Hacking",
+                "Reading Your All files",
+            "Password File Detected",
+            "Sending all Passwords and personal files to server",
+            "Cleaning Up "
+        ]
+
+        for (const element of msg) {
+          await  addItem(element)            // addItem is a async function
+          
+        }
+    }
+    main()
+    </script>
+    </body>
+</html>
