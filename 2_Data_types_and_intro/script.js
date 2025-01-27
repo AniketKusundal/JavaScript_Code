@@ -73,3 +73,32 @@ obj.salary = "1cr"
 
 console.log(obj);
 console.log(typeof obj);
+
+
+
+
+
+// let a = 20;
+
+// {
+//     let a = 10;
+//     let b = 25
+//     console.log(a)
+// }
+
+// console.log(a)
+
+
+
+
+
+var f = 20      // globely scoped
+
+
+{
+    var f = 55
+    var h = 56
+    console.log(f)
+}
+
+console.log(f)
